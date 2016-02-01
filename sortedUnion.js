@@ -1,7 +1,9 @@
-//TODO 引数が複数対応
-function unite (arr1, arr2, arr3) {
-  var concat1And2 = concatWithSortedOrder(arr1, arr2)
-  return concatWithSortedOrder(concat1And2, arr3)
+function unite (argument) {
+  var returnVal = []
+  for (var i = 0; i < arguments.length; i++) {
+    returnVal = concatWithSortedOrder(returnVal, arguments[i])
+  }
+  return returnVal
 }
 
 function concatWithSortedOrder (arr1, arr2) {
@@ -14,4 +16,4 @@ function concatWithSortedOrder (arr1, arr2) {
   }, arr1)
 }
 
-console.log(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]))
+console.log(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]))
